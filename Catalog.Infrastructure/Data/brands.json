@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "64b0f5a765f9ae001c23f1a0",
+    "Name": "Adidas"
+  },
+  {
+    "Id": "64b0f5a765f9ae001c23f1a1",
+    "Name": "Nike"
+  },
+  {
+    "Id": "64b0f5a765f9ae001c23f1a2",
+    "Name": "Puma"
+  },
+  {
+    "Id": "64b0f5a765f9ae001c23f1a3",
+    "Name": "Reebok"
+  },
+  {
+    "Id": "64b0f5a765f9ae001c23f1a4",
+    "Name": "New Balance"
+  },
+  {
+    "Id": "64b0f5a765f9ae001c23f1a5",
+    "Name": "Under Armour"
+  },
+  {
+    "Id": "64b0f5a765f9ae001c23f1a6",
+    "Name": "Asics"
+  },
+  {
+    "Id": "64b0f5a765f9ae001c23f1a7",
+    "Name": "Vans"
+  },
+  {
+    "Id": "64b0f5a765f9ae001c23f1a8",
+    "Name": "Converse"
+  },
+  {
+    "Id": "64b0f5a765f9ae001c23f1a9",
+    "Name": "Skechers"
+  }
+]

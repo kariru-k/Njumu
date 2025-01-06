@@ -1,0 +1,155 @@
+[
+  {
+    "Id": "64b0f5a765f9ae001c23f1c0",
+    "Name": "Adidas Ultraboost",
+    "Summary": "High-performance running shoes for ultimate comfort and support.",
+    "Description": "The Adidas Ultraboost provides responsive cushioning and a snug fit, perfect for long-distance runs or casual wear. Featuring the latest Boost technology, these shoes provide energy return with every step.",
+    "ImageFile": "adidas_ultraboost.jpg",
+    "Brands": {
+      "Id": "64b0f5a765f9ae001c23f1b0",
+      "Name": "Adidas"
+    },
+    "Types": {
+      "Id": "64b0f5a765f9ae001c23f1b0",
+      "Name": "Sneakers"
+    },
+    "AvailableSizes": [39, 40, 41, 42, 43, 44, 45],
+    "Price": 139.99
+  },
+  {
+    "Id": "64b0f5a765f9ae001c23f1c1",
+    "Name": "Nike Air Max 270",
+    "Summary": "Stylish and comfortable sneakers perfect for everyday wear.",
+    "Description": "The Nike Air Max 270 features a large Max Air unit for maximum cushioning and an innovative design. Ideal for both running and streetwear, it’s built for all-day comfort and style.",
+    "ImageFile": "nike_air_max_270.jpg",
+    "Brands": {
+      "Id": "64b0f5a765f9ae001c23f1b1",
+      "Name": "Nike"
+    },
+    "Types": {
+      "Id": "64b0f5a765f9ae001c23f1b0",
+      "Name": "Sneakers"
+    },
+    "AvailableSizes": [40, 41, 42, 43, 44, 45, 46],
+    "Price": 150.00
+  },
+  {
+    "Id": "64b0f5a765f9ae001c23f1c2",
+    "Name": "Puma Suede Classic",
+    "Summary": "Classic low-top sneakers with a suede finish, perfect for casual wear.",
+    "Description": "The Puma Suede Classic has a retro vibe that never goes out of style. With its sleek suede upper and iconic formstrip, it's an essential choice for fashion-forward individuals looking for all-day comfort.",
+    "ImageFile": "puma_suede_classic.jpg",
+    "Brands": {
+      "Id": "64b0f5a765f9ae001c23f1b2",
+      "Name": "Puma"
+    },
+    "Types": {
+      "Id": "64b0f5a765f9ae001c23f1b0",
+      "Name": "Sneakers"
+    },
+    "AvailableSizes": [38, 39, 40, 41, 42, 43],
+    "Price": 75.99
+  },
+  {
+    "Id": "64b0f5a765f9ae001c23f1c3",
+    "Name": "Reebok Classic Leather",
+    "Summary": "An iconic running shoe with a soft leather upper and a retro look.",
+    "Description": "The Reebok Classic Leather has a timeless design that blends durability and style. This shoe provides cushioned support with every step, offering comfort and confidence for both athletes and casual wearers alike.",
+    "ImageFile": "reebok_classic_leather.jpg",
+    "Brands": {
+      "Id": "64b0f5a765f9ae001c23f1b3",
+      "Name": "Reebok"
+    },
+    "Types": {
+      "Id": "64b0f5a765f9ae001c23f1b0",
+      "Name": "Sneakers"
+    },
+    "AvailableSizes": [37, 38, 39, 40, 41, 42],
+    "Price": 65.00
+  },
+  {
+    "Id": "64b0f5a765f9ae001c23f1c4",
+    "Name": "Skechers Go Walk",
+    "Summary": "Comfortable slip-on shoes for all-day wear, perfect for light walking.",
+    "Description": "The Skechers Go Walk provides ultimate comfort and ease with its responsive cushioning and slip-on design. Perfect for running errands or taking a walk, this shoe is the ideal blend of comfort and practicality.",
+    "ImageFile": "skechers_go_walk.jpg",
+    "Brands": {
+      "Id": "64b0f5a765f9ae001c23f1b4",
+      "Name": "Skechers"
+    },
+    "Types": {
+      "Id": "64b0f5a765f9ae001c23f1b6",
+      "Name": "Slippers"
+    },
+    "AvailableSizes": [39, 40, 41, 42, 43, 44],
+    "Price": 45.99
+  },
+  {
+    "Id": "64b0f5a765f9ae001c23f1c5",
+    "Name": "Vans Old Skool",
+    "Summary": "Classic skateboarding shoes with durable canvas and suede material.",
+    "Description": "The Vans Old Skool features a reinforced toe cap and durable materials, providing a comfortable and durable fit for skateboarding or casual wear. Its iconic design is perfect for anyone looking to add some edge to their style.",
+    "ImageFile": "vans_old_skool.jpg",
+    "Brands": {
+      "Id": "64b0f5a765f9ae001c23f1b5",
+      "Name": "Vans"
+    },
+    "Types": {
+      "Id": "64b0f5a765f9ae001c23f1c7",
+      "Name": "Skateboarding Shoes"
+    },
+    "AvailableSizes": [38, 39, 40, 41, 42],
+    "Price": 55.00
+  },
+  {
+    "Id": "64b0f5a765f9ae001c23f1c6",
+    "Name": "Under Armour Curry One",
+    "Summary": "Basketball shoes designed for speed and agility on the court.",
+    "Description": "The Under Armour Curry One is built to support quick movements and explosive jumps, with a lightweight design and responsive cushioning for ultimate performance. Perfect for serious basketball players.",
+    "ImageFile": "under_armour_curry_one.jpg",
+    "Brands": {
+      "Id": "64b0f5a765f9ae001c23f1b6",
+      "Name": "Under Armour"
+    },
+    "Types": {
+      "Id": "64b0f5a765f9ae001c23f1c0",
+      "Name": "Basketball Shoes"
+    },
+    "AvailableSizes": [40, 41, 42, 43, 44],
+    "Price": 120.00
+  },
+  {
+    "Id": "64b0f5a765f9ae001c23f1c7",
+    "Name": "Nike Tiempo Legend 9",
+    "Summary": "Premium soccer cleats for control, speed, and comfort on the field.",
+    "Description": "The Nike Tiempo Legend 9 offers a perfect blend of comfort and performance for soccer players. With a soft leather upper and dynamic traction system, these cleats are designed to provide control and speed on the pitch.",
+    "ImageFile": "nike_tiempo_legend_9.jpg",
+    "Brands": {
+      "Id": "64b0f5a765f9ae001c23f1b1",
+      "Name": "Nike"
+    },
+    "Types": {
+      "Id": "64b0f5a765f9ae001c23f1c1",
+      "Name": "Soccer Cleats"
+    },
+    "AvailableSizes": [39, 40, 41, 42, 43],
+    "Price": 150.00
+  },
+  {
+    "Id": "64b0f5a765f9ae001c23f1c8",
+    "Name": "Asics Gel-Kayano 27",
+    "Summary": "Running shoes with a focus on stability and long-lasting comfort.",
+    "Description": "The Asics Gel-Kayano 27 is designed for runners who need support and cushioning. With the latest Gel technology and a lightweight design, it ensures a smooth and stable ride for both short and long runs.",
+    "ImageFile": "asics_gel_kayano_27.jpg",
+    "Brands": {
+      "Id": "64b0f5a765f9ae001c23f1b7",
+      "Name": "Asics"
+    },
+    "Types": {
+      "Id": "64b0f5a765f9ae001c23f1b1",
+      "Name": "Running Shoes"
+    },
+    "AvailableSizes": [38, 39, 40, 41, 42, 43],
+    "Price": 130.00
+  }
+]
