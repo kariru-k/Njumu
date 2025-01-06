@@ -10,6 +10,7 @@ public class ProductMappingProfile: Profile
     public ProductMappingProfile()
     {
         CreateMap<ProductBrand, BrandResponse>().ReverseMap();
+        CreateMap<Product, ProductResponse>().ReverseMap();
     }
     
     
