@@ -14,6 +14,7 @@ public class ProductMappingProfile: Profile
         CreateMap<Product, ProductResponse>().ReverseMap();
         CreateMap<ProductType, TypeResponse>().ReverseMap();
         CreateMap<Product, CreateProductCommand>().ReverseMap();
+        CreateMap<Product, UpdateProductCommand>().ReverseMap();
     }
     
     
