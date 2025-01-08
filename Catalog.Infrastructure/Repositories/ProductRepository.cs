@@ -64,11 +64,11 @@ public class ProductRepository: IProductRepository,  IBrandRepository, ITypesRep
         return updatedProduct.IsAcknowledged && updatedProduct.ModifiedCount > 0;
     }
 
-    public async Task<bool> DeleteProduct(Product product)
+    public async Task<bool> DeleteProduct(string id)
     {
         var deletedProduct = await _context
             .Products
-            .DeleteOneAsync(p => p.Id == product.Id);
+            .DeleteOneAsync(p => p.Id == id);
 
         return deletedProduct.IsAcknowledged && deletedProduct.DeletedCount > 0;
     }
