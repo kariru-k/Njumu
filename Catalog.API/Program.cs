@@ -1,3 +1,7 @@
+using System.Reflection;
+using Catalog.Core.Repositories;
+using Catalog.Infrastructure.Data;
+using Catalog.Infrastructure.Repositories;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,9 +13,20 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
     {
-        c.SwaggerDoc(name: "v1", info: new OpenApiInfo { Title = "Catalog.API", Version = "v1" });
-    }
-    );
+        c.SwaggerDoc(name: "v1", info: new OpenApiInfo { Title = "Catalog.API", Version = "v1" }); 
+    });
+
+//Registering Automapper
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
+//Registering Mediatr
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+
+//Register Application Services
+builder.Services.AddScoped<ICatalogContext, CatalogContext>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IBrandRepository, ProductRepository>();
+builder.Services.AddScoped<ITypesRepository, ProductRepository>();
 
 var app = builder.Build();
 
