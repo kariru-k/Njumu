@@ -14,13 +14,28 @@ public class CatalogContext: ICatalogContext
 
     public CatalogContext(IConfiguration configuration)
     {
-        var client = new MongoClient(configuration.GetValue<string>("DatabaseSettings:ConnectionString"));
-        var database = client.GetDatabase(configuration.GetValue<string>("DatabaseSettings:Databasename"));
-        
-        Brands = database.GetCollection<ProductBrand>(configuration.GetValue<string>("DatabaseSettings:BrandsCollection"));
-        Types = database.GetCollection<ProductType>(configuration.GetValue<string>("DatabaseSettings:TypesCollection"));
-        Products = database.GetCollection<Product>(configuration.GetValue<string>("DatabaseSettings:ProductsCollection"));
-        
+        // Determine the environment (Local or Docker)
+        var environment = configuration.GetValue<string>("Environment") ?? "Local";
+
+        // Get the MongoDB settings for the current environment
+        var mongoSettings = configuration.GetSection($"MongoDB:{environment}");
+
+        var connectionString = mongoSettings.GetValue<string>("ConnectionString");
+        var databaseName = mongoSettings.GetValue<string>("DatabaseName");
+        var brandsCollectionName = mongoSettings.GetValue<string>("BrandsCollection");
+        var typesCollectionName = mongoSettings.GetValue<string>("TypesCollection");
+        var productsCollectionName = mongoSettings.GetValue<string>("ProductsCollection");
+
+        // Initialize the MongoDB client and database
+        var client = new MongoClient(connectionString);
+        var database = client.GetDatabase(databaseName);
+
+        // Initialize collections
+        Brands = database.GetCollection<ProductBrand>(brandsCollectionName);
+        Types = database.GetCollection<ProductType>(typesCollectionName);
+        Products = database.GetCollection<Product>(productsCollectionName);
+
+        // Seed data if needed
         BrandContextSeed.SeedData(Brands);
         TypeContextSeed.SeedData(Types);
         CatalogContextSeed.SeedData(Products);

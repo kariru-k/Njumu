@@ -1,28 +1,31 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{17F60870-E127-4882-AC42-7F6E5669A950}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{5514CE3C-E618-41EE-AA55-2F8F9F64C125}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.API", "Catalog.API\Catalog.API.csproj", "{0177454D-F84B-4246-93A3-3A4763307928}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.API", "Catalog.API\Catalog.API.csproj", "{0177454D-F84B-4246-93A3-3A4763307928}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Application", "Catalog.Application\Catalog.Application.csproj", "{49ED47F7-3C22-4686-B2DA-3F10C7FF0004}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Application", "Catalog.Application\Catalog.Application.csproj", "{49ED47F7-3C22-4686-B2DA-3F10C7FF0004}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Core", "Catalog.Core\Catalog.Core.csproj", "{AF681D8A-A17D-4758-A2CE-8B292488A6FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Core", "Catalog.Core\Catalog.Core.csproj", "{AF681D8A-A17D-4758-A2CE-8B292488A6FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Infrastructure", "Catalog.Infrastructure\Catalog.Infrastructure.csproj", "{9082EBE7-84A8-4AFA-B477-456E445105E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Infrastructure", "Catalog.Infrastructure\Catalog.Infrastructure.csproj", "{9082EBE7-84A8-4AFA-B477-456E445105E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ABEC6B01-1CA9-47FE-8631-5ACD5FE02DEA}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{8AEBBF81-DA1C-42E6-A7E9-4F7101AA513F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{5514CE3C-E618-41EE-AA55-2F8F9F64C125} = {17F60870-E127-4882-AC42-7F6E5669A950}
-		{0177454D-F84B-4246-93A3-3A4763307928} = {5514CE3C-E618-41EE-AA55-2F8F9F64C125}
-		{49ED47F7-3C22-4686-B2DA-3F10C7FF0004} = {5514CE3C-E618-41EE-AA55-2F8F9F64C125}
-		{AF681D8A-A17D-4758-A2CE-8B292488A6FF} = {5514CE3C-E618-41EE-AA55-2F8F9F64C125}
-		{9082EBE7-84A8-4AFA-B477-456E445105E9} = {5514CE3C-E618-41EE-AA55-2F8F9F64C125}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{0177454D-F84B-4246-93A3-3A4763307928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -41,5 +44,19 @@ Global
 		{9082EBE7-84A8-4AFA-B477-456E445105E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9082EBE7-84A8-4AFA-B477-456E445105E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9082EBE7-84A8-4AFA-B477-456E445105E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AEBBF81-DA1C-42E6-A7E9-4F7101AA513F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AEBBF81-DA1C-42E6-A7E9-4F7101AA513F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AEBBF81-DA1C-42E6-A7E9-4F7101AA513F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AEBBF81-DA1C-42E6-A7E9-4F7101AA513F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5514CE3C-E618-41EE-AA55-2F8F9F64C125} = {17F60870-E127-4882-AC42-7F6E5669A950}
+		{0177454D-F84B-4246-93A3-3A4763307928} = {5514CE3C-E618-41EE-AA55-2F8F9F64C125}
+		{49ED47F7-3C22-4686-B2DA-3F10C7FF0004} = {5514CE3C-E618-41EE-AA55-2F8F9F64C125}
+		{AF681D8A-A17D-4758-A2CE-8B292488A6FF} = {5514CE3C-E618-41EE-AA55-2F8F9F64C125}
+		{9082EBE7-84A8-4AFA-B477-456E445105E9} = {5514CE3C-E618-41EE-AA55-2F8F9F64C125}
 	EndGlobalSection
 EndGlobal
