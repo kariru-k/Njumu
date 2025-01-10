@@ -41,10 +41,14 @@ public class ProductRepository: IProductRepository,  IBrandRepository, ITypesRep
 
         var totalItems = await _context.Products.CountDocumentsAsync(filter);
 
-        var data = await _context.Products.Find(filter)
-            .Skip((catalogSpecParams.PageIndex - 1) * catalogSpecParams.PageSize)
-            .Limit(catalogSpecParams.PageSize)
-            .ToListAsync();
+
+        var data = await DataFilter(catalogSpecParams, filter);
+        
+
+        // var data = await _context.Products.Find(filter)
+        //     .Skip((catalogSpecParams.PageIndex - 1) * catalogSpecParams.PageSize)
+        //     .Limit(catalogSpecParams.PageSize)
+        //     .ToListAsync();
 
         return new Pagination<Product>(
             pageIndex: catalogSpecParams.PageIndex,
@@ -52,6 +56,32 @@ public class ProductRepository: IProductRepository,  IBrandRepository, ITypesRep
             count: (int) totalItems,
             data
         );
+    }
+
+    private async Task<IReadOnlyList<Product>> DataFilter(CatalogSpecParams catalogSpecParams, FilterDefinition<Product> filter)
+    {
+        var sortDefn = Builders<Product>.Sort.Ascending("Name"); //The default choice
+
+        if (!string.IsNullOrEmpty(catalogSpecParams.Sort))
+        {
+            switch (catalogSpecParams.Sort)
+            {
+                case "priceAsc":
+                    sortDefn = Builders<Product>.Sort.Ascending(p => p.Price);
+                    break;
+                case "priceDesc":
+                    sortDefn = Builders<Product>.Sort.Descending(p => p.Price);
+                    break;
+            }
+        }
+
+        return await _context
+            .Products
+            .Find(filter)
+            .Sort(sortDefn)
+            .Skip((catalogSpecParams.PageIndex - 1) * catalogSpecParams.PageSize)
+            .Limit(catalogSpecParams.PageSize)
+            .ToListAsync();
     }
 
     public async Task<Product> GetProduct(string id)
