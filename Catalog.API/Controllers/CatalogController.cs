@@ -57,7 +57,7 @@ public class CatalogController: ApiController
     
     [HttpGet]
     [Route("[action]", Name = "GetAllProducts")]
-    [ProducesResponseType(typeof(IList<ProductResponse>), (int) HttpStatusCode.OK)]
+    [ProducesResponseType(typeof(Pagination<ProductResponse>), (int) HttpStatusCode.OK)]
     [ProducesResponseType((int) HttpStatusCode.NotFound)]
     public async Task<ActionResult<IList<ProductResponse>>> GetAllProducts([FromQuery] CatalogSpecParams catalogSpecParams)
     {

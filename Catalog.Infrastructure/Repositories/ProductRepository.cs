@@ -58,31 +58,7 @@ public class ProductRepository: IProductRepository,  IBrandRepository, ITypesRep
         );
     }
 
-    private async Task<IReadOnlyList<Product>> DataFilter(CatalogSpecParams catalogSpecParams, FilterDefinition<Product> filter)
-    {
-        var sortDefn = Builders<Product>.Sort.Ascending("Name"); //The default choice
-
-        if (!string.IsNullOrEmpty(catalogSpecParams.Sort))
-        {
-            switch (catalogSpecParams.Sort)
-            {
-                case "priceAsc":
-                    sortDefn = Builders<Product>.Sort.Ascending(p => p.Price);
-                    break;
-                case "priceDesc":
-                    sortDefn = Builders<Product>.Sort.Descending(p => p.Price);
-                    break;
-            }
-        }
-
-        return await _context
-            .Products
-            .Find(filter)
-            .Sort(sortDefn)
-            .Skip((catalogSpecParams.PageIndex - 1) * catalogSpecParams.PageSize)
-            .Limit(catalogSpecParams.PageSize)
-            .ToListAsync();
-    }
+    
 
     public async Task<Product> GetProduct(string id)
     {
@@ -148,6 +124,33 @@ public class ProductRepository: IProductRepository,  IBrandRepository, ITypesRep
         return await _context
             .Types
             .Find(type => true)
+            .ToListAsync();
+    }
+    
+    
+    private async Task<IReadOnlyList<Product>> DataFilter(CatalogSpecParams catalogSpecParams, FilterDefinition<Product> filter)
+    {
+        var sortDefn = Builders<Product>.Sort.Ascending("Name"); //The default choice
+
+        if (!string.IsNullOrEmpty(catalogSpecParams.Sort))
+        {
+            switch (catalogSpecParams.Sort)
+            {
+                case "priceAsc":
+                    sortDefn = Builders<Product>.Sort.Ascending(p => p.Price);
+                    break;
+                case "priceDesc":
+                    sortDefn = Builders<Product>.Sort.Descending(p => p.Price);
+                    break;
+            }
+        }
+
+        return await _context
+            .Products
+            .Find(filter)
+            .Sort(sortDefn)
+            .Skip((catalogSpecParams.PageIndex - 1) * catalogSpecParams.PageSize)
+            .Limit(catalogSpecParams.PageSize)
             .ToListAsync();
     }
 }
