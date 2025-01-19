@@ -9,7 +9,7 @@ public interface IBasketRepository
     
     Task<ShoppingCart> UpdateBasket(ShoppingCart basket);
 
-    Task<bool> DeleteBasket(string userName);
+    Task DeleteBasket(string userName);
 
 
 }
