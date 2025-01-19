@@ -9,6 +9,13 @@ services:
     volumes:
       - mongo_data:/data/db
   
+  basketdb:
+    container_name: basketdb
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
   
   catalog.api:
     environment:
@@ -32,4 +39,23 @@ services:
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
       - ~/.aspnet/https:/https:ro
-
+  
+  
+  basket.api:
+    environment:
+      - Environment=Docker
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8002
+      - ASPNETCORE_HTTPS_PORTS=8802
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=password
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+      - CacheSettings__ConnectionString=basketdb:6379
+    ports:
+      - "8002:80"
+      - "8802:80"
+    depends_on:
+      - basketdb
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ~/.aspnet/https:/https:ro
