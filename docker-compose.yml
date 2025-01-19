@@ -25,3 +25,9 @@ volumes:
     redis_data:
       
   
+
+  discount.api:
+    image: discount.api
+    build:
+      context: .
+      dockerfile: Discount.API/Dockerfile
