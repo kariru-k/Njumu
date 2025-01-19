@@ -4,15 +4,16 @@ public class ShoppingCart
 {
     public string UserName { get; set; }
 
-    public List<ShoppingCartItem> Items { get; set; } = new List<ShoppingCartItem>();
+    public List<ShoppingCartItem> Items { get; set; }
 
     public ShoppingCart()
     {
         
     }
 
-    public ShoppingCart(string userName)
+    public ShoppingCart(string userName, List<ShoppingCartItem> items)
     {
         UserName = userName;
+        Items = items;
     }
 }
