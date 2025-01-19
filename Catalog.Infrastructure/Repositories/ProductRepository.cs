@@ -48,8 +48,6 @@ public class ProductRepository: IProductRepository,  IBrandRepository, ITypesRep
         // var data = await _context.Products.Find(filter)
         //     .Skip((catalogSpecParams.PageIndex - 1) * catalogSpecParams.PageSize)
         //     .Limit(catalogSpecParams.PageSize)
-        //     .ToListAsync();
-
         return new Pagination<Product>(
             pageIndex: catalogSpecParams.PageIndex,
             pageSize: catalogSpecParams.PageSize,
