@@ -6,7 +6,7 @@ using MongoDB.Driver;
 
 namespace Catalog.Infrastructure.Repositories;
 
-public class ProductRepository: IProductRepository,  IBrandRepository, ITypesRepository
+public class ProductRepository : IProductRepository, IBrandRepository, ITypesRepository
 {
     private readonly ICatalogContext _context;
 
@@ -14,25 +14,30 @@ public class ProductRepository: IProductRepository,  IBrandRepository, ITypesRep
     {
         _context = context;
     }
-    
+
+    public async Task<IEnumerable<ProductBrand>> GetAllBrands()
+    {
+        return await _context
+            .Brands
+            .Find(brand => true)
+            .ToListAsync();
+    }
+
     public async Task<Pagination<Product>> GetAllProducts(CatalogSpecParams catalogSpecParams)
     {
-
         var builder = Builders<Product>.Filter;
         var filter = builder.Empty;
 
         if (!string.IsNullOrEmpty(catalogSpecParams.Search))
-        {
             filter &= builder.Where(p =>
                 p.Name.Contains(catalogSpecParams.Search, StringComparison.CurrentCultureIgnoreCase));
-        }
-        
+
         if (!string.IsNullOrEmpty(catalogSpecParams.BrandId))
         {
             var brandFilter = builder.Eq(p => p.Brands.Id, catalogSpecParams.BrandId);
             filter &= brandFilter;
         }
-        
+
         if (!string.IsNullOrEmpty(catalogSpecParams.TypeId))
         {
             var typeFilter = builder.Eq(p => p.Types.Id, catalogSpecParams.TypeId);
@@ -43,20 +48,19 @@ public class ProductRepository: IProductRepository,  IBrandRepository, ITypesRep
 
 
         var data = await DataFilter(catalogSpecParams, filter);
-        
+
 
         // var data = await _context.Products.Find(filter)
         //     .Skip((catalogSpecParams.PageIndex - 1) * catalogSpecParams.PageSize)
         //     .Limit(catalogSpecParams.PageSize)
         return new Pagination<Product>(
-            pageIndex: catalogSpecParams.PageIndex,
-            pageSize: catalogSpecParams.PageSize,
-            count: (int) totalItems,
+            catalogSpecParams.PageIndex,
+            catalogSpecParams.PageSize,
+            (int)totalItems,
             data
         );
     }
 
-    
 
     public async Task<Product> GetProduct(string id)
     {
@@ -109,14 +113,6 @@ public class ProductRepository: IProductRepository,  IBrandRepository, ITypesRep
         return deletedProduct.IsAcknowledged && deletedProduct.DeletedCount > 0;
     }
 
-    public async Task<IEnumerable<ProductBrand>> GetAllBrands()
-    {
-        return await _context
-            .Brands
-            .Find(brand => true)
-            .ToListAsync();
-    }
-
     public async Task<IEnumerable<ProductType>> GetAllTypes()
     {
         return await _context
@@ -124,14 +120,14 @@ public class ProductRepository: IProductRepository,  IBrandRepository, ITypesRep
             .Find(type => true)
             .ToListAsync();
     }
-    
-    
-    private async Task<IReadOnlyList<Product>> DataFilter(CatalogSpecParams catalogSpecParams, FilterDefinition<Product> filter)
+
+
+    private async Task<IReadOnlyList<Product>> DataFilter(CatalogSpecParams catalogSpecParams,
+        FilterDefinition<Product> filter)
     {
         var sortDefn = Builders<Product>.Sort.Ascending("Name"); //The default choice
 
         if (!string.IsNullOrEmpty(catalogSpecParams.Sort))
-        {
             switch (catalogSpecParams.Sort)
             {
                 case "priceAsc":
@@ -141,7 +137,6 @@ public class ProductRepository: IProductRepository,  IBrandRepository, ITypesRep
                     sortDefn = Builders<Product>.Sort.Descending(p => p.Price);
                     break;
             }
-        }
 
         return await _context
             .Products

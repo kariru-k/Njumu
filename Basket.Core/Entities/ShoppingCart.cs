@@ -2,13 +2,8 @@ namespace Basket.Core.Entities;
 
 public class ShoppingCart
 {
-    public string UserName { get; set; }
-
-    public List<ShoppingCartItem> Items { get; set; }
-
     public ShoppingCart()
     {
-        
     }
 
     public ShoppingCart(string userName, List<ShoppingCartItem> items)
@@ -16,4 +11,8 @@ public class ShoppingCart
         UserName = userName;
         Items = items;
     }
+
+    public string UserName { get; set; }
+
+    public List<ShoppingCartItem> Items { get; set; }
 }

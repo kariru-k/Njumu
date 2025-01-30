@@ -8,8 +8,8 @@ public static class BrandContextSeed
 {
     public static void SeedData(IMongoCollection<ProductBrand> brandCollection)
     {
-        bool checkBrands = brandCollection.CountDocuments(FilterDefinition<ProductBrand>.Empty) > 0;
-        string path = Path.Combine("Data", "SeedData", "brands.json");
+        var checkBrands = brandCollection.CountDocuments(FilterDefinition<ProductBrand>.Empty) > 0;
+        var path = Path.Combine("Data", "SeedData", "brands.json");
 
         if (!checkBrands)
         {
@@ -17,12 +17,8 @@ public static class BrandContextSeed
             var brands = JsonSerializer.Deserialize<List<ProductBrand>>(brandsData);
 
             if (brands != null)
-            {
                 foreach (var item in brands)
-                {
                     brandCollection.InsertOneAsync(item);
-                }
-            }
         }
     }
 }

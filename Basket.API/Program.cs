@@ -22,15 +22,12 @@ builder.Services.AddApiVersioning(options =>
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc(name: "v1", info: new OpenApiInfo {Title = "Basket.API", Version = "v1"});
-});
+builder.Services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "Basket.API", Version = "v1" }); });
 
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 
-var assemblies = new Assembly[]
+var assemblies = new[]
 {
     Assembly.GetExecutingAssembly(),
     typeof(GetBasketByUserNameHandler).Assembly
@@ -44,10 +41,7 @@ builder.Services.AddStackExchangeRedisCache(options =>
 });
 
 
-
-builder.Services.AddScoped<IBasketRepository, BasketRepository > ();
-
-
+builder.Services.AddScoped<IBasketRepository, BasketRepository>();
 
 
 var app = builder.Build();

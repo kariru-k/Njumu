@@ -13,7 +13,15 @@
       "Id": "64b0f5a765f9ae001c23f1b0",
       "Name": "Sneakers"
     },
-    "AvailableSizes": [39, 40, 41, 42, 43, 44, 45],
+    "AvailableSizes": [
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45
+    ],
     "Price": 139.99
   },
   {
@@ -30,7 +38,15 @@
       "Id": "64b0f5a765f9ae001c23f1b0",
       "Name": "Sneakers"
     },
-    "AvailableSizes": [40, 41, 42, 43, 44, 45, 46],
+    "AvailableSizes": [
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
     "Price": 150.00
   },
   {
@@ -47,7 +63,14 @@
       "Id": "64b0f5a765f9ae001c23f1b0",
       "Name": "Sneakers"
     },
-    "AvailableSizes": [38, 39, 40, 41, 42, 43],
+    "AvailableSizes": [
+      38,
+      39,
+      40,
+      41,
+      42,
+      43
+    ],
     "Price": 75.99
   },
   {
@@ -64,7 +87,14 @@
       "Id": "64b0f5a765f9ae001c23f1b0",
       "Name": "Sneakers"
     },
-    "AvailableSizes": [37, 38, 39, 40, 41, 42],
+    "AvailableSizes": [
+      37,
+      38,
+      39,
+      40,
+      41,
+      42
+    ],
     "Price": 65.00
   },
   {
@@ -81,7 +111,14 @@
       "Id": "64b0f5a765f9ae001c23f1b6",
       "Name": "Slippers"
     },
-    "AvailableSizes": [39, 40, 41, 42, 43, 44],
+    "AvailableSizes": [
+      39,
+      40,
+      41,
+      42,
+      43,
+      44
+    ],
     "Price": 45.99
   },
   {
@@ -98,7 +135,13 @@
       "Id": "64b0f5a765f9ae001c23f1c7",
       "Name": "Skateboarding Shoes"
     },
-    "AvailableSizes": [38, 39, 40, 41, 42],
+    "AvailableSizes": [
+      38,
+      39,
+      40,
+      41,
+      42
+    ],
     "Price": 55.00
   },
   {
@@ -115,7 +158,13 @@
       "Id": "64b0f5a765f9ae001c23f1c0",
       "Name": "Basketball Shoes"
     },
-    "AvailableSizes": [40, 41, 42, 43, 44],
+    "AvailableSizes": [
+      40,
+      41,
+      42,
+      43,
+      44
+    ],
     "Price": 120.00
   },
   {
@@ -132,7 +181,13 @@
       "Id": "64b0f5a765f9ae001c23f1c1",
       "Name": "Soccer Cleats"
     },
-    "AvailableSizes": [39, 40, 41, 42, 43],
+    "AvailableSizes": [
+      39,
+      40,
+      41,
+      42,
+      43
+    ],
     "Price": 150.00
   },
   {
@@ -149,7 +204,14 @@
       "Id": "64b0f5a765f9ae001c23f1b1",
       "Name": "Running Shoes"
     },
-    "AvailableSizes": [38, 39, 40, 41, 42, 43],
+    "AvailableSizes": [
+      38,
+      39,
+      40,
+      41,
+      42,
+      43
+    ],
     "Price": 130.00
   }
 ]

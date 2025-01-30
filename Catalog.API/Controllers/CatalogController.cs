@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Catalog.API.Controllers;
 
-public class CatalogController: ApiController
+public class CatalogController : ApiController
 {
     private readonly IMediator _mediator;
 
@@ -19,8 +19,8 @@ public class CatalogController: ApiController
 
     [HttpGet]
     [Route("[action]/{id}", Name = "GetProductById")]
-    [ProducesResponseType(typeof(ProductResponse), (int) HttpStatusCode.OK)]
-    [ProducesResponseType((int) HttpStatusCode.NotFound)]
+    [ProducesResponseType(typeof(ProductResponse), (int)HttpStatusCode.OK)]
+    [ProducesResponseType((int)HttpStatusCode.NotFound)]
     public async Task<ActionResult<ProductResponse>> GetProductById(string id)
     {
         var query = new GetProductByIdQuery(id);
@@ -30,11 +30,10 @@ public class CatalogController: ApiController
     }
 
 
-    
     [HttpGet]
     [Route("[action]/{name}", Name = "GetProductsByName")]
-    [ProducesResponseType(typeof(IList<ProductResponse>), (int) HttpStatusCode.OK)]
-    [ProducesResponseType((int) HttpStatusCode.NotFound)]
+    [ProducesResponseType(typeof(IList<ProductResponse>), (int)HttpStatusCode.OK)]
+    [ProducesResponseType((int)HttpStatusCode.NotFound)]
     public async Task<ActionResult<IList<ProductResponse>>> GetProductByName(string name)
     {
         var query = new GetProductByNameQuery(name);
@@ -42,11 +41,11 @@ public class CatalogController: ApiController
 
         return Ok(result);
     }
-    
+
     [HttpGet]
     [Route("[action]/{brand}", Name = "GetProductsByBrand")]
-    [ProducesResponseType(typeof(IList<ProductResponse>), (int) HttpStatusCode.OK)]
-    [ProducesResponseType((int) HttpStatusCode.NotFound)]
+    [ProducesResponseType(typeof(IList<ProductResponse>), (int)HttpStatusCode.OK)]
+    [ProducesResponseType((int)HttpStatusCode.NotFound)]
     public async Task<ActionResult<IList<ProductResponse>>> GetProductByBrand(string brand)
     {
         var query = new GetProductByBrandQuery(brand);
@@ -54,23 +53,24 @@ public class CatalogController: ApiController
 
         return Ok(result);
     }
-    
+
     [HttpGet]
     [Route("[action]", Name = "GetAllProducts")]
-    [ProducesResponseType(typeof(Pagination<ProductResponse>), (int) HttpStatusCode.OK)]
-    [ProducesResponseType((int) HttpStatusCode.NotFound)]
-    public async Task<ActionResult<IList<ProductResponse>>> GetAllProducts([FromQuery] CatalogSpecParams catalogSpecParams)
+    [ProducesResponseType(typeof(Pagination<ProductResponse>), (int)HttpStatusCode.OK)]
+    [ProducesResponseType((int)HttpStatusCode.NotFound)]
+    public async Task<ActionResult<IList<ProductResponse>>> GetAllProducts(
+        [FromQuery] CatalogSpecParams catalogSpecParams)
     {
         var query = new GetAllProductsQuery(catalogSpecParams);
         var result = await _mediator.Send(query);
 
         return Ok(result);
     }
-    
+
     [HttpGet]
     [Route("[action]", Name = "GetAllBrands")]
-    [ProducesResponseType(typeof(IList<BrandResponse>), (int) HttpStatusCode.OK)]
-    [ProducesResponseType((int) HttpStatusCode.NotFound)]
+    [ProducesResponseType(typeof(IList<BrandResponse>), (int)HttpStatusCode.OK)]
+    [ProducesResponseType((int)HttpStatusCode.NotFound)]
     public async Task<ActionResult<IList<BrandResponse>>> GetAllBrands()
     {
         var query = new GetAllBrandsQuery();
@@ -78,11 +78,11 @@ public class CatalogController: ApiController
 
         return Ok(result);
     }
-    
+
     [HttpGet]
     [Route("[action]", Name = "GetAllTypes")]
-    [ProducesResponseType(typeof(IList<TypeResponse>), (int) HttpStatusCode.OK)]
-    [ProducesResponseType((int) HttpStatusCode.NotFound)]
+    [ProducesResponseType(typeof(IList<TypeResponse>), (int)HttpStatusCode.OK)]
+    [ProducesResponseType((int)HttpStatusCode.NotFound)]
     public async Task<ActionResult<IList<TypeResponse>>> GetAllTypes()
     {
         var query = new GetAllTypesQuery();
@@ -100,7 +100,7 @@ public class CatalogController: ApiController
 
         return Ok(result);
     }
-    
+
     [HttpPut]
     [Route("UpdateProduct")]
     [ProducesResponseType(typeof(bool), (int)HttpStatusCode.OK)]
@@ -110,7 +110,7 @@ public class CatalogController: ApiController
 
         return Ok(result);
     }
-    
+
     [HttpDelete]
     [Route("[action]/{id}", Name = "DeleteProduct")]
     [ProducesResponseType(typeof(bool), (int)HttpStatusCode.NoContent)]
@@ -122,6 +122,4 @@ public class CatalogController: ApiController
 
         return Ok(result);
     }
-    
-
 }

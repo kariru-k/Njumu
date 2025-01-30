@@ -20,19 +20,15 @@ builder.Services.AddApiVersioning(options =>
 });
 
 
-
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
-    {
-        c.SwaggerDoc(name: "v1", info: new OpenApiInfo { Title = "Catalog.API", Version = "v1" }); 
-    });
+builder.Services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "Catalog.API", Version = "v1" }); });
 
 //Registering Automapper
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 //Registering Mediatr
-var assemblies = new Assembly[]
+var assemblies = new[]
 {
     Assembly.GetExecutingAssembly(),
     typeof(GetAllBrandsHandler).Assembly

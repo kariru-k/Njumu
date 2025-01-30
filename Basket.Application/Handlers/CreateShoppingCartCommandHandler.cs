@@ -7,7 +7,7 @@ using MediatR;
 
 namespace Basket.Application.Handlers;
 
-public class CreateShoppingCartCommandHandler: IRequestHandler<CreateShoppingCartCommand, ShoppingCartResponse>
+public class CreateShoppingCartCommandHandler : IRequestHandler<CreateShoppingCartCommand, ShoppingCartResponse>
 {
     private readonly IBasketRepository _basketRepository;
 
@@ -22,8 +22,8 @@ public class CreateShoppingCartCommandHandler: IRequestHandler<CreateShoppingCar
         //TODO: Integrating and implementing discount service here
 
         var shoppingCart = await _basketRepository.UpdateBasket(new ShoppingCart(
-            userName: request.UserName,
-            items: request.Items
+            request.UserName,
+            request.Items
         ));
 
         var shoppingCartResponse = BasketMapper.Mapper.Map<ShoppingCartResponse>(shoppingCart);

@@ -8,8 +8,8 @@ public static class TypeContextSeed
 {
     public static void SeedData(IMongoCollection<ProductType> typesCollection)
     {
-        bool checkTypes = typesCollection.CountDocuments(FilterDefinition<ProductType>.Empty) > 0;
-        string path = Path.Combine("Data", "SeedData", "types.json");
+        var checkTypes = typesCollection.CountDocuments(FilterDefinition<ProductType>.Empty) > 0;
+        var path = Path.Combine("Data", "SeedData", "types.json");
 
         if (!checkTypes)
         {
@@ -17,12 +17,8 @@ public static class TypeContextSeed
             var types = JsonSerializer.Deserialize<List<ProductType>>(typesData);
 
             if (types != null)
-            {
                 foreach (var item in types)
-                {
                     typesCollection.InsertOneAsync(item);
-                }
-            }
         }
     }
 }

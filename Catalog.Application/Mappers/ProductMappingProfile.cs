@@ -6,9 +6,8 @@ using Catalog.Core.Specs;
 
 namespace Catalog.Application.Mappers;
 
-public class ProductMappingProfile: Profile
+public class ProductMappingProfile : Profile
 {
-
     public ProductMappingProfile()
     {
         CreateMap<ProductBrand, BrandResponse>().ReverseMap();
@@ -18,6 +17,4 @@ public class ProductMappingProfile: Profile
         CreateMap<Product, UpdateProductCommand>().ReverseMap();
         CreateMap<Pagination<Product>, Pagination<ProductResponse>>().ReverseMap();
     }
-    
-    
 }

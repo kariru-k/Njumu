@@ -4,7 +4,7 @@ namespace Basket.Application.Mappers;
 
 public class BasketMapper
 {
-    private static readonly Lazy<IMapper> Lazy = new Lazy<IMapper>(() =>
+    private static readonly Lazy<IMapper> Lazy = new(() =>
     {
         var config = new MapperConfiguration(cfg =>
         {

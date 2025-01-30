@@ -3,10 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Basket.API.Controllers;
 
-[ApiVersion(("1"))]
-[Route(("api/v{version:apiVersion}/[controller]"))]
+[ApiVersion("1")]
+[Route("api/v{version:apiVersion}/[controller]")]
 [ApiController]
-public class ApiController: ControllerBase
+public class ApiController : ControllerBase
 {
-    
 }

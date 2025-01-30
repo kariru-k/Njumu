@@ -17,5 +17,4 @@ public static class ProductMapper
     });
 
     public static IMapper Mapper => Lazy.Value;
-
 }

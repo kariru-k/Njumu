@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Basket.API.Controllers;
 
-public class BasketController: ApiController
+public class BasketController : ApiController
 {
     private readonly IMediator _mediator;
 
@@ -28,17 +28,17 @@ public class BasketController: ApiController
 
         return Ok(basket);
     }
-    
+
     [HttpPost("CreateBasket")]
     [ProducesResponseType(typeof(ShoppingCartResponse), (int)HttpStatusCode.OK)]
-    public async Task<ActionResult<ShoppingCartResponse>> CreateBasket([FromBody] CreateShoppingCartCommand createShoppingCartCommand)
+    public async Task<ActionResult<ShoppingCartResponse>> CreateBasket(
+        [FromBody] CreateShoppingCartCommand createShoppingCartCommand)
     {
-
         var basket = await _mediator.Send(createShoppingCartCommand);
 
         return Ok(basket);
     }
-    
+
     [HttpDelete]
     [Route("[action]/{userName}", Name = "DeleteBasketByUserName")]
     [ProducesResponseType((int)HttpStatusCode.NoContent)]
@@ -48,5 +48,4 @@ public class BasketController: ApiController
 
         return Ok(await _mediator.Send(deleteBasketCommand));
     }
-    
 }

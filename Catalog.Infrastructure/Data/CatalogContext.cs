@@ -4,14 +4,8 @@ using MongoDB.Driver;
 
 namespace Catalog.Infrastructure.Data;
 
-public class CatalogContext: ICatalogContext
+public class CatalogContext : ICatalogContext
 {
-    public IMongoCollection<Product> Products { get; }
-    
-    public IMongoCollection<ProductBrand> Brands { get; }
-    
-    public IMongoCollection<ProductType> Types { get; }
-
     public CatalogContext(IConfiguration configuration)
     {
         // Determine the environment (Local or Docker)
@@ -40,4 +34,10 @@ public class CatalogContext: ICatalogContext
         TypeContextSeed.SeedData(Types);
         CatalogContextSeed.SeedData(Products);
     }
+
+    public IMongoCollection<Product> Products { get; }
+
+    public IMongoCollection<ProductBrand> Brands { get; }
+
+    public IMongoCollection<ProductType> Types { get; }
 }
