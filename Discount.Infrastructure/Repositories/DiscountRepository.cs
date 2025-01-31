@@ -63,13 +63,13 @@ public class DiscountRepository : IDiscountRepository
         return true;
     }
 
-    public async Task<bool> DeleteDiscount(Coupon coupon)
+    public async Task<bool> DeleteDiscount(string productName)
     {
         await using var connection =
             new NpgsqlConnection(_configuration.GetValue<string>("DatabaseSettings:ConnectionString"));
 
         var affected = await connection.ExecuteAsync("DELETE * FROM Coupon WHERE ProductName = @ProductName",
-            new { coupon.ProductName });
+            new { productName });
 
         if (affected == 0) return false;
 
