@@ -7,13 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{17
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{5514CE3C-E618-41EE-AA55-2F8F9F64C125}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.API", "Catalog.API\Catalog.API.csproj", "{0177454D-F84B-4246-93A3-3A4763307928}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.API", "Catalog\Catalog.API\Catalog.API.csproj", "{0177454D-F84B-4246-93A3-3A4763307928}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Application", "Catalog.Application\Catalog.Application.csproj", "{49ED47F7-3C22-4686-B2DA-3F10C7FF0004}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Application", "Catalog\Catalog.Application\Catalog.Application.csproj", "{49ED47F7-3C22-4686-B2DA-3F10C7FF0004}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Core", "Catalog.Core\Catalog.Core.csproj", "{AF681D8A-A17D-4758-A2CE-8B292488A6FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Core", "Catalog\Catalog.Core\Catalog.Core.csproj", "{AF681D8A-A17D-4758-A2CE-8B292488A6FF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Infrastructure", "Catalog.Infrastructure\Catalog.Infrastructure.csproj", "{9082EBE7-84A8-4AFA-B477-456E445105E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Infrastructure", "Catalog\Catalog.Infrastructure\Catalog.Infrastructure.csproj", "{9082EBE7-84A8-4AFA-B477-456E445105E9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ABEC6B01-1CA9-47FE-8631-5ACD5FE02DEA}"
 	ProjectSection(SolutionItems) = preProject
@@ -24,23 +24,23 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{C1424F8C-098B-497D-93C5-4DDC5C12E699}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.API", "Basket.API\Basket.API.csproj", "{3FD4DEB7-001E-49FC-B04B-09D1727DA046}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.API", "Basket\Basket.API\Basket.API.csproj", "{3FD4DEB7-001E-49FC-B04B-09D1727DA046}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.Core", "Basket.Core\Basket.Core.csproj", "{2E4B90DB-70EF-4B45-BE1B-AECF8B29DF20}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.Core", "Basket\Basket.Core\Basket.Core.csproj", "{2E4B90DB-70EF-4B45-BE1B-AECF8B29DF20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.Application", "Basket.Application\Basket.Application.csproj", "{93FED0D7-880E-4AE1-9EFD-808699B193AB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.Application", "Basket\Basket.Application\Basket.Application.csproj", "{93FED0D7-880E-4AE1-9EFD-808699B193AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.Infrastructure", "Basket.Infrastructure\Basket.Infrastructure.csproj", "{CFD61E05-7570-4F82-95CC-E06D070DCEDE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.Infrastructure", "Basket\Basket.Infrastructure\Basket.Infrastructure.csproj", "{CFD61E05-7570-4F82-95CC-E06D070DCEDE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Discount", "Discount", "{405223B5-3939-40CF-9025-F3252842970D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discount.API", "Discount.API\Discount.API.csproj", "{5130B9E5-2E9A-4417-9731-4593871677F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discount.API", "Discount\Discount.API\Discount.API.csproj", "{5130B9E5-2E9A-4417-9731-4593871677F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discount.Application", "Discount.Application\Discount.Application.csproj", "{8A7C0287-3D50-483E-898F-261B4711A601}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discount.Application", "Discount\Discount.Application\Discount.Application.csproj", "{8A7C0287-3D50-483E-898F-261B4711A601}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discount.Infrastructure", "Discount.Infrastructure\Discount.Infrastructure.csproj", "{93B17842-E861-4FCE-88EF-60E68DC808B1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discount.Infrastructure", "Discount\Discount.Infrastructure\Discount.Infrastructure.csproj", "{93B17842-E861-4FCE-88EF-60E68DC808B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discount.Core", "Discount.Core\Discount.Core.csproj", "{9A594C14-9951-47DF-82D3-B60C1CFF45BE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discount.Core", "Discount\Discount.Core\Discount.Core.csproj", "{9A594C14-9951-47DF-82D3-B60C1CFF45BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
