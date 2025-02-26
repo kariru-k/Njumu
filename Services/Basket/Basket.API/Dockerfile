@@ -8,13 +8,13 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["Basket.API/Basket.API.csproj", "Basket.API/"]
-COPY ["Basket.Application/Basket.Application.csproj", "Basket.Application/"]
-COPY ["Basket.Core/Basket.Core.csproj", "Basket.Core/"]
-COPY ["Basket.Infrastructure/Basket.Infrastructure.csproj", "Basket.Infrastructure/"]
-RUN dotnet restore "Basket.API/Basket.API.csproj"
+COPY ["Basket/Basket.API/Basket.API.csproj", "Basket/Basket.API/"]
+COPY ["Basket/Basket.Application/Basket.Application.csproj", "Basket/Basket.Application/"]
+COPY ["Basket/Basket.Core/Basket.Core.csproj", "Basket/Basket.Core/"]
+COPY ["Basket/Basket.Infrastructure/Basket.Infrastructure.csproj", "Basket/Basket.Infrastructure/"]
+RUN dotnet restore "Basket/Basket.API/Basket.API.csproj"
 COPY . .
-WORKDIR "Basket.API"
+WORKDIR "Basket/Basket.API"
 RUN dotnet build "./Basket.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
@@ -24,4 +24,4 @@ RUN dotnet publish "./Basket.API.csproj" -c $BUILD_CONFIGURATION -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Basket.API.dll"]
+ENTRYPOINT ["dotnet", "Basket/Basket.API.dll"]
