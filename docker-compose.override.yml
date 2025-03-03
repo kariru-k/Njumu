@@ -79,7 +79,7 @@ services:
       - ASPNETCORE_Kestrel__Certificates__Default__Password=password
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
       - CacheSettings__ConnectionString=basketdb:6379
-      - GrpcSettings__DiscountUrl=http://discount.api
+      - GrpcSettings__DiscountUrl=http://discount.api:80
     ports:
       - "8002:80"
       - "8802:80"

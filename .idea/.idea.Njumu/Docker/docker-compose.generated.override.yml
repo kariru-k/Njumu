@@ -1,0 +1,22 @@
+# This is a generated file. Not intended for manual editing.
+version: "3.4"
+services:
+  discount.api:
+    build:
+      context: "C:\\Users\\HomePC\\RiderProjects\\Njumu"
+      dockerfile: "Services/Discount/Discount.API/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/Discount.API.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "discountapi:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\HomePC\\RiderProjects\\Njumu\\Services\\Discount\\Discount.API:/app:rw"
+    - "C:\\Users\\HomePC\\RiderProjects\\Njumu:/src:rw"
+    - "C:\\Users\\HomePC\\.nuget\\packages:/home/app/.nuget/packages"
+    working_dir: "/app"
